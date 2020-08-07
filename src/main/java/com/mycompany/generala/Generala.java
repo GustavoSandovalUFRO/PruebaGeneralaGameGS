@@ -5,6 +5,8 @@
  */
 package com.mycompany.generala;
 
+import java.util.Arrays;
+
 /**
  *
  * @author Marcelo
@@ -194,10 +196,34 @@ public class Generala {
         return 0;
     }
 
-    public static int largeStraight(int d1, int d2, int d3, int d4, int d5)
-    {
+    //Se Termina el metodo largeStraight añadiendo los 2 nuevos metodos
+    public static int largeStraight(int d1, int d2, int d3, int d4, int d5){
+        if (repetitiveDice(d1, d2, d3, d4, d5)|| thereIsDice(d1, d2, d3, d4, d5, 1)){
+        
         return 0;
+        }
+        return 20;
     }
+    
+    //Se crea el metodo repetitiveDice para verificar los valores repetidos.
+    public static boolean repetitiveDice(int d1, int d2, int d3, int d4, int d5) {
+        if (Arrays.asList(d1,d2, d3, d4, d5).stream()
+                                            .distinct().toArray().length==5){
+            return false;
+        }
+        return true;
+    }
+
+    //Se crea el metodo thereIsDice para verificar mediante el target si el numero que se busca está.
+    public static boolean thereIsDice( int d1, int d2, int d3, int d4, int d5, int target){
+
+        if (Arrays.asList(d1,d2,d3,d4,d5).contains(target)){
+        
+            return true;
+        }
+
+        return false;
+}
 
     public static int fullHouse(int d1, int d2, int d3, int d4, int d5)
     {
@@ -233,4 +259,8 @@ public class Generala {
             return 0;
     }
 }
+
+
+
+
 
